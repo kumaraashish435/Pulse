@@ -1,0 +1,26 @@
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# .NET
+# ========================
+Pulse.Api/**/bin/
+Pulse.Api/**/obj/
+Pulse.Api/**/Migrations/
+Pulse.Api/**/.vs/
+Pulse.Api/**/*.user
+Pulse.Api/**/*.suo
+
+# ========================
+# Secrets
+# ========================
+**/appsettings.Development.json
+**/.env
+
+# ========================
+# Logs
+# ========================
+*.log
