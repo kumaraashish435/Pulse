@@ -1,4 +1,5 @@
 using System;
+using Microsoft.EntityFrameworkCore;
 using Pulse.Api.Data;
 using Pulse.Api.Models.Domain;
 using Pulse.Api.Repositories.Interface;
@@ -20,5 +21,10 @@ public class CategoryRepository : ICategoryRepository
         await dbContext.Categories.AddAsync(category);
         await dbContext.SaveChangesAsync();
         return category;
+    }
+
+    public async Task<IEnumerable<Category>> GetAllAsync()
+    {
+        return await dbContext.Categories.ToListAsync();
     }
 }

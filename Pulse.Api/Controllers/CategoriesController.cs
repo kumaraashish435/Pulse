@@ -44,5 +44,25 @@ namespace Pulse.Api.Controllers
             // Implementation for creating a category goes here.
             return Ok(response);
         }   
+
+
+        //get all categories
+        // GET: {http://localhost:5096/api/Categories}
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategories()
+        {
+            var categories = await categoryRepository.GetAllAsync();
+            var response = categories.Select(category => new CategoryDto
+            {
+                Id = category.Id,
+                Name = category.Name,
+                UrlHandle = category.UrlHandle
+            });
+
+            return Ok(response);
+        }
     }
+
+
+
 }
